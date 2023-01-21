@@ -18,17 +18,26 @@ app.get('/', (req, res) => {
 })
 
 app.get('/products', (req,res)=>{
-    db.collection('product').find().toArray((err,result) => {
+    let categoryId = Number(req.query.categoryId)
+    let query = {}
+    if(categoryId){
+        query = {category_id:categoryId}
+    } else {
+        query = {}
+    }
+    db.collection('product').find(query).toArray((err,result) => {
         if(err) throw err;
         res.send(result)
     })
 })
-// app.get('/categories', (req,res)=>{
-//     db.collection('product').find().toArray((err,result) => {
-//         if(err) throw err;
-//         res.send(result)
-//     })
-// })
+
+
+app.get('/categories', (req,res)=>{
+    db.collection('category').find().toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+})
 
 //connection with db
 MongoClient.connect(mongoUrl,(err,client)=>{
