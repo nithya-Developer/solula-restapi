@@ -1,0 +1,62 @@
+db.category.insert(
+    [
+        {
+            "category_id": 1,
+            "categoryName": "Fashion"
+        },
+        {
+            "category_id": 2,
+            "categoryName":"Electronics"
+        }
+    ]
+)
+
+
+
+
+
+db.product.insert(
+    [
+        {
+            "product_id": 1,
+            "product_name": "Girls top",
+            "category": "Fashion",
+            "qtyPerUnit": 10,
+            "unitPrice": 2000,
+            "unitInStock": 20,
+            "discontinued": "No",
+            "category_id": 1,
+        },
+        {
+            "product_id": 2,
+            "product_name": "Girls top",
+            "category": "Fashion",
+            "qtyPerUnit": 30,
+            "unitPrice": 1500,
+            "unitInStock": 35,
+            "discontinued": "Yes",
+            "category_id": 1,
+        },
+        {
+            "product_id": 3,
+            "product_name": "Iron",
+            "category": "Electronics",
+            "category_id": 2,
+            "qtyPerUnit": 25,
+            "unitPrice": 2500,
+            "unitInStock": 20,
+            "discontinued": "No",
+        },
+        {
+            "product_id": 4,
+            "product_name": "Iron",
+            "category": "Electronics",
+            "category_id": 2,
+            "qtyPerUnit": 10,
+            "unitPrice": 2600,
+            "unitInStock": 20,
+            "discontinued": "yes",
+        }
+    ]
+
+)
