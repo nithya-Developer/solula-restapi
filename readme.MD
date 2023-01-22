@@ -1,8 +1,18 @@
-## API Documentations (Postman) 
+# API Documentations (Postman) 
+
+## Produt Model <br />
 
 ### > List of all Product (GET)
 * http://localhost:9800/products
 
+
+### > List of Products wrt to category_id <br />
+
+### i) category_id = 1 (GET)
+* http://localhost:9800/products?categoryId=1 <br />
+
+### ii) category_id = 2 (GET)
+* http://localhost:9800/products?categoryId=2 <br />
 ### > Create a new Product (POST)
 * http://localhost:9800/addProducts
 
@@ -18,14 +28,21 @@ body<br />
     "category_id": 1<br />
 } <br />
 
+### > Product Update one particular record by its ID (PUT)
+* http://localhost:9800/updateProduct/5 <br />
+body <br> { <br>
+        "product_name",<br>
+        "qty_per_unit",<br>
+        "unit_price",<br>
+        "unit_in_stock",<br>
+        "discontinued"<br>
+}
+### Delete one record of the product by its ID (Delete)
+* http://localhost:9800/deleteProduct/63cd39ab4ba4b5e2fcf0e993
 
+<hr/>
 
-### > List of Products wrt to category_id <br />
-### i) category_id = 1 (GET)
-* http://localhost:9800/products?categoryId=1 <br />
-
-### ii) category_id = 2 (GET)
-* http://localhost:9800/products?categoryId=2 <br />
+## Category Model <br />
 
 ### > List of all category (GET)
 * http://localhost:9800/categories <br />
@@ -38,3 +55,6 @@ body <br/>
 "category_id": 3,<br/>
 "categoryName": "Furniture"<br/>
 }<br/>
+
+### Delete one record of the category by its ID (Delete)
+* http://localhost:9800/deleteCategory/63cd0999c6808b5c7ed51587
