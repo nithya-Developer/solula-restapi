@@ -8,15 +8,20 @@ const mongo = require('mongodb');
 const MongoClient = mongo.MongoClient;
 const mongoUrl = process.env.MongoURL;
 // const cors = require('cors');
-// let bodyParser = require('body-parser')
-// let db;
+const bodyParser = require('body-parser')
+let db;
 
+
+// middleware
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
     res.send('Hello from Express')
 })
 
+// List of Products wrt to category_id 
 app.get('/products', (req,res)=>{
     let categoryId = Number(req.query.categoryId)
     let query = {}
@@ -31,11 +36,28 @@ app.get('/products', (req,res)=>{
     })
 })
 
+// create product
+app.post('/addProducts', (req,res) => {
+    db.collection('product').insert(req.body,(err,result) => {
+        if(err) throw err;
+        res.send('Product Added')
+    })
+})
 
+
+//List of all category
 app.get('/categories', (req,res)=>{
     db.collection('category').find().toArray((err,result) => {
         if(err) throw err;
         res.send(result)
+    })
+})
+
+// create category
+app.post('/addCategories', (req,res) => {
+    db.collection('category').insert(req.body,(err,result) => {
+        if(err) throw err;
+        res.send('Category Added')
     })
 })
 
