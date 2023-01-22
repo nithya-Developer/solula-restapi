@@ -18,6 +18,7 @@
 - `npm install`
 - `npm start`
 - optional: include _.env_ in your _.gitignore_
+- add your MongoDB live url inside _.env_ file
 
 
 # API Documentations (Postman) 
