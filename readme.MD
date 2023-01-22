@@ -1,3 +1,25 @@
+# Simple Node with Express Server with REST API
+
+## Features 
+- Node.js
+- express
+- REST API
+- Mongo DB
+
+## Requirements
+
+- [node & npm] 
+- [git]
+
+## Installation
+
+- `https://github.com/nithya-Developer/solula-restapi.git`
+- `cd solula-restapi`
+- `npm install`
+- `npm start`
+- optional: include _.env_ in your _.gitignore_
+
+
 # API Documentations (Postman) 
 
 ## Produt Model <br />
