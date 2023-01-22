@@ -1,0 +1,12 @@
+db.category.insert(
+    [
+        {
+            "category_id": 1,
+            "categoryName": "Fashion"
+        },
+        {
+            "category_id": 2,
+            "categoryName":"Electronics"
+        }
+    ]
+)
